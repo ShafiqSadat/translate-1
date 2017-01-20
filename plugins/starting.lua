@@ -1,15 +1,15 @@
 ﻿local triggers = {
 		'^/(start)$',
 		'^/(contact) (.+)$',
-		'^/(pm) (%d+)', 
+		'^/(pm) (%d+)',
 		'^###cb:/(langfa)',
 		'^###cb:/(langen)'
 }
-	
+
 local action = function(msg, matches)
 
 if matches[1] == 'start' then
-local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊\n-------------\nسلام 👋  '..msg.from.first_name..'\nلطفا زبان خود را انتخاب کنید'
+local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊\n@AFBoTS\n-------------\nسلام 👋  '..msg.from.first_name..'\n\n@AFBoTSلطفا زبان خود را انتخاب کنید'
 	keyboard = {} -- Array Of Keyboard
 	keyboard.inline_keyboard = {
 	   {
@@ -21,7 +21,7 @@ local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊
 	api.sendChatAction(msg.chat.id, 'typing')
 	api.sendKeyboard(msg.chat.id, text, keyboard, true)
 	end
-	
+
 	if msg.cb then
         local text = ''
         local text1 = ''
@@ -32,7 +32,7 @@ local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊
         end
 		if matches[1] == 'langen' then
 			text1 = 'Language Set!'
-		    text = [[Welcome my friend 
+		    text = [[Welcome my friend
 please send your text for translate]]
 			client:set('UserLnag'..msg.from.id, 'EN')
 		end
