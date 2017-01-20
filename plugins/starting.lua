@@ -9,7 +9,7 @@
 local action = function(msg, matches)
 
 if matches[1] == 'start' then
-local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊\n@AFBoTS\n-------------\nسلام 👋  '..msg.from.first_name..'\n\n@AFBoTS\nلطفا زبان خود را انتخاب کنید'
+local text = 'Hi 👋 '..msg.from.first_name..'\nplease select yor language 😊\n@AFBoTS\n-------------\nسلام 👋  '..msg.from.first_name..'\nلطفا زبان خود را انتخاب کنید'
 	keyboard = {} -- Array Of Keyboard
 	keyboard.inline_keyboard = {
 	   {
